@@ -1,5 +1,13 @@
 [ignore]
 .*/node_modules/flow-bin/.*
+.*/node_modules/babel-types/.*
+.*/node_modules/babel-generator/.*
+.*/node_modules/babel-helper-builder-binary-assignment-operator-visitor/.*
+.*/node_modules/babel-helper-explode-assignable-expression/.*
+.*/node_modules/babel-helper-remap-async-to-generator/.*
+.*/node_modules/babel-template/.*
+.*/node_modules/babel-traverse/.*
+.*/node_modules/babel-helper-regex/.*
 
 [libs]
 ./interfaces

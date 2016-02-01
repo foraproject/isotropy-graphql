@@ -12,6 +12,7 @@
 /* eslint-disable max-len */
 import { expect } from 'chai';
 import { stringify } from 'querystring';
+import { describe, it } from 'mocha';
 import zlib from 'zlib';
 import urlMiddleware from "isotropy-middleware-url";
 import busboyMiddleware from "isotropy-middleware-busboy";
@@ -790,7 +791,7 @@ describe(`GraphQL-HTTP tests`, () => {
       var app = http.createServer((req, res) => {
         const fn = async () => {
           await urlMiddleware(req, res);
-          await busboyMiddleware(req);
+          await busboyMiddleware(req, res);
           req.files.file.mimetype = req.files.file.mimeType;
           req.files.file.originalname = req.files.file.filename;
           await graphqlFn(req, res);
