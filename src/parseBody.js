@@ -13,13 +13,14 @@ import getBody from 'raw-body';
 import httpError from 'http-errors';
 import querystring from 'querystring';
 import zlib from 'zlib';
-import type { Request } from 'express';
 
+import type { IncomingMessage, ServerResponse } from './flow/http';
 
-export function parseBody(req: Request, next: NodeCallback): void {
+export function parseBody(req: IncomingMessage, next: NodeCallback): void {
+
   try {
-    // If express has already parsed a body as a keyed object, use it.
-    if (typeof req.body === 'object' && !(req.body instanceof Buffer)) {
+    // If we have already parsed a body as a keyed object, use it.
+    if (req.body && typeof req.body === 'object' && !(req.body instanceof Buffer)) {
       return next(null, req.body);
     }
 
@@ -30,8 +31,6 @@ export function parseBody(req: Request, next: NodeCallback): void {
 
     var typeInfo = contentType.parse(req);
 
-    // If express has already parsed a body as a string, and the content-type
-    // was application/graphql, parse the string body.
     if (typeof req.body === 'string' &&
         typeInfo.type === 'application/graphql') {
       return next(null, graphqlParser(req.body));
@@ -120,6 +119,7 @@ function read(req, typeInfo, parseFn, next) {
 
     try {
       // Decode and parse body.
+      req.body = body;
       return next(null, parseFn(body));
     } catch (error) {
       return next(error);

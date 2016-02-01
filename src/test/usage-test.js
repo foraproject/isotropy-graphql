@@ -11,7 +11,6 @@
 /* eslint-disable max-len */
 
 import { expect } from 'chai';
-import { describe, it } from 'mocha';
 import request from 'supertest-as-promised';
 import express from 'express';
 import graphqlHTTP from '../';
