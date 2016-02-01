@@ -1,6 +1,6 @@
 {
   "name": "isotropy-graphql",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "GraphQL server which uses native node APIs (ported from express-graphql).",
   "contributors": [
     "Lee Byron <lee@leebyron.com> (http://leebyron.com/)",
@@ -15,21 +15,12 @@
     "url": "http://github.com/graphql/isotropy-graphql.git"
   },
   "keywords": [
-    "express",
+    "isotropy",
     "graphql",
     "middleware",
     "api"
   ],
   "main": "dist/index.js",
-  "directories": {
-    "lib": "./dist"
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "PATENTS"
-  ],
   "scripts": {
     "test": "mocha dist/test/test",
     "test-debug": "mocha dist/test/test --debug-brk"

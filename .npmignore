@@ -1,5 +1,5 @@
-src/*
-dist/test/*
+src/
+dist/test/
 build.sh
 .jshintrc
 .gitignore
