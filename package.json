@@ -1,6 +1,6 @@
 {
   "name": "isotropy-graphql",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "GraphQL server which uses native node APIs (ported from express-graphql).",
   "contributors": [
     "Lee Byron <lee@leebyron.com> (http://leebyron.com/)",
