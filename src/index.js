@@ -17,7 +17,7 @@ import { parseBody } from './parseBody';
 import { renderGraphiQL } from './renderGraphiQL';
 import accepts from "accepts";
 
-import type { IncomingMessage, ServerResponse } from './flow/http';
+import type { IncomingMessage, ServerResponse } from "./flow/http";
 
 /**
  * Used to configure the graphQLHTTP middleware by providing a schema

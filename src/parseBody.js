@@ -14,7 +14,7 @@ import httpError from 'http-errors';
 import querystring from 'querystring';
 import zlib from 'zlib';
 
-import type { IncomingMessage, ServerResponse } from './flow/http';
+import type { IncomingMessage, ServerResponse } from "./flow/http";
 
 export function parseBody(req: IncomingMessage, next: NodeCallback): void {
 
